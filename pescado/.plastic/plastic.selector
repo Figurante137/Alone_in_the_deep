@@ -1,0 +1,4 @@
+repository "pescado/pescado@4674030555311@cloud"
+  path "/"
+    br "/main"
+    co "/main"
