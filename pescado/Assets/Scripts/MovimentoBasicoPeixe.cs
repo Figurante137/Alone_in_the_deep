@@ -32,7 +32,6 @@ public class MovimentoBasicoPeixe : MonoBehaviour
         Vector2 swimOffset = new Vector2(0, Mathf.Sin(Time.time * swimFrequency) * swimAmplitude);
         transform.Translate((direction * speed * Time.deltaTime) + swimOffset * Time.deltaTime);
 
-        // Aqui você pode adicionar detecção de borda da tela para mudar direção
     }
 
     void ChooseNewDirection()
