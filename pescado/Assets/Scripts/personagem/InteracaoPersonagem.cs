@@ -6,7 +6,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool isPiloting = false;
     private bool isFishing = false;
 
-    public GameObject barco; // Atribuir via Inspector
+    public GameObject barco;
 
     void Update()
     {
@@ -47,6 +47,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void StartPiloting()
     {
+        transform.SetParent(barco.transform);
         isPiloting = true;
         // desativa controle do personagem
         GetComponent<MovimentoPersonagem>().enabled = false;
@@ -64,6 +65,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         isPiloting = false;
         isFishing = false;
+        transform.SetParent(null);
         GetComponent<MovimentoPersonagem>().enabled = true;
         if (barco != null) barco.GetComponent<BarcoController>().enabled = false;
         Debug.Log("Parou todas as ações");
