@@ -47,10 +47,4 @@ public class MovimentoBasicoPeixe : MonoBehaviour
         float angle = Random.Range(0, 2 * Mathf.PI);
         direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized;
     }
-    void OnDrawGizmos()
-    {
-        // Gizmo para visualizar o Raycast na cena
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)(direction * rayDistance));
-    }
 }

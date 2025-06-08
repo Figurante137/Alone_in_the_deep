@@ -67,7 +67,10 @@ public class PlayerInteraction : MonoBehaviour
         isFishing = false;
         transform.SetParent(null);
         GetComponent<MovimentoPersonagem>().enabled = true;
-        if (barco != null) barco.GetComponent<BarcoController>().enabled = false;
-        Debug.Log("Parou todas as ações");
+        if (barco != null)
+        {
+            barco.GetComponent<BarcoController>().enabled = false;
+        }
+            
     }
 }
