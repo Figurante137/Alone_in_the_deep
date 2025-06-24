@@ -47,4 +47,12 @@ public class MovimentoBasicoPeixe : MonoBehaviour
         float angle = Random.Range(0, 2 * Mathf.PI);
         direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized;
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Anzol"))
+        {
+            FindFirstObjectByType<FishingMinigameCircular>().StartMinigame();
+            this.enabled = false; // Desativa. Denada pela explicação
+        }
+    }
 }
